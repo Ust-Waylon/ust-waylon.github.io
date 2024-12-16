@@ -31,6 +31,7 @@ Research Experience
   * Project: Human-AI Collaboration in Data Science
   * Supervised by [Prof. Xiaojuan MA ](https://www.cse.ust.hk/~mxj/)
   * Hong Kong University of Science and Technology (HKUST)
+  * Project GitHub link: [Dream Maker](https://github.com/Ust-Waylon/Dream_Maker)
   * Apr 2023 - Aug 2024
 
 Work Experience
@@ -42,4 +43,4 @@ Work Experience
 * **AI Engineer Intern (Image Processing)**
   * [DRESIO Limited](https://www.dresio.io), Hong Kong Science Park 
   * Hong Kong SAR
-  * June 2023 - August 2023
+  * June 2022 - August 2022
