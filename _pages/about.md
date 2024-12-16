@@ -22,3 +22,7 @@ Education
 
 Publication
 ======
+**[ICDM 2024] SR-PredictAO: Session-based Recommendation with High-Capability Predictor Add-On**
+- **Authors**: [Ruida Wang](https://rickyskywalker.github.io), [Raymond Chi-Wing WONG](https://cse.hkust.edu.hk/~raywong/), **Weile Tan**
+- Accepted by **ICDM 2024** as a **Regular Paper** (acceptance rate: 66/604 = 10.9%)
+- [[Paper]](https://arxiv.org/abs/2309.12218) [[GitHub]](https://github.com/rickyskywalker/sr-predictao-official) [[Slides]](https://ust-waylon.github.io/files/ICDM2024_SR_PredictAO.pdf)
