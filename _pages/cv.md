@@ -9,56 +9,37 @@ redirect_from:
 
 {% include base_path %}
 
+You can download my PDF version CV [here](http://ust-waylon.github.io/files/cv_09_25.pdf).
+
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+- **PhD in Computer Science and Engineering**  
+  Hong Kong University of Science and Technology (HKUST), 2024 - Present
+- **BSc in Data Science and Technology**  
+  Hong Kong University of Science and Technology (HKUST), 2020 - 2024
+- **Exchange Student**  
+  University of California, Santa Barbara (UCSB), 2023
 
-Work experience
+Research Experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* **Undergraduate Research Opportunities Program**
+  * Project: Knowledge Discovery over Database
+  * Supervised by [Prof. Raymond Chi-Wing WONG](https://cse.hkust.edu.hk/~raywong/)
+  * Hong Kong University of Science and Technology (HKUST)
+  * Aug 2022 - Sep 2024
+* **CSE/CPEG Final Year Project**
+  * Project: Human-AI Collaboration in Data Science
+  * Supervised by [Prof. Xiaojuan MA ](https://www.cse.ust.hk/~mxj/)
+  * Hong Kong University of Science and Technology (HKUST)
+  * Apr 2023 - Aug 2024
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
+Work Experience
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+* **AI Engineer Intern**
+  * [SOCIF Limited](https://www.socif.co), Hong Kong Science Park
+  * Hong Kong SAR
+  * June 2023 - August 2023
+* **AI Engineer Intern (Image Processing)**
+  * [DRESIO Limited](https://www.dresio.io), Hong Kong Science Park 
+  * Hong Kong SAR
+  * June 2023 - August 2023
