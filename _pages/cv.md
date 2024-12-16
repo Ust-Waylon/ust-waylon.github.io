@@ -15,8 +15,11 @@ Education
 ======
 - **PhD in Computer Science and Engineering**  
   Hong Kong University of Science and Technology (HKUST), 2024 - Present
+  - HKUST RedBird PhD Award
 - **BSc in Data Science and Technology**  
   Hong Kong University of Science and Technology (HKUST), 2020 - 2024
+  - First Class Honors, Major CGA: 3.84/4.3
+  - [S.S. Chern Class](https://www.math.hkust.edu.hk/ug/chern_class/) Member
 - **Exchange Student**  
   University of California, Santa Barbara (UCSB), 2023
 
