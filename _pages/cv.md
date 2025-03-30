@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-You can download my PDF version CV [here](http://ust-waylon.github.io/files/cv_09_25.pdf).
+You can download my PDF version CV [here](http://ust-waylon.github.io/files/cv_03_30.pdf) (last updated on 2025-03-30).
 
 Education
 ======
