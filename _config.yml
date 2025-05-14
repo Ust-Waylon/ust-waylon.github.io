@@ -21,7 +21,7 @@ repository               : "ust-waylon/ust-waylon.github.io" # the GitHub reposi
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "id_photo.png"
+  avatar           : "id_photo.jpg"
   name             : "Weile (Waylon) TAN"
   pronouns         : # example: "she/her"  
   bio              : "Year 1 PhD student in CSE at HKUST"
