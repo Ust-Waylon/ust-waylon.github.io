@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Weile TAN"
 title_separator          : "-"
 name                     : &name "Weile TAN"
-description              : &description "personal description"
+description              : &description "PhD student in CSE at HKUST. Research on session-based recommendation, data mining, and machine learning."
 url                      : https://ust-waylon.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "ust-waylon/ust-waylon.github.io" # the GitHub repository for your site
@@ -21,10 +21,10 @@ repository               : "ust-waylon/ust-waylon.github.io" # the GitHub reposi
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "id_photo.jpg"
+  avatar           : "id_photo.jpg?v=20260714"
   name             : "Weile (Waylon) TAN"
   pronouns         : # example: "she/her"  
-  bio              : "Year 2 PhD student in CSE at HKUST"
+  bio              : "PhD student in CSE at HKUST"
   location         : "Hong Kong"
   employer         : "HKUST"
   uri              : # URL
@@ -89,7 +89,7 @@ publication_category:
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
-future                   : true
+future                   : false
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false #change to true to add link to talkmap on talks page
 comments:
@@ -119,7 +119,7 @@ staticman:
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  hide                   : false     # change to true to hide the RSS feed in the footer
+  hide                   : true      # change to true to hide the RSS feed in the footer
   path                   : # blank (default) uses feed.xml
 
 
@@ -137,13 +137,15 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Open Graph/Twitter default site image
+og_image                 : "id_photo.jpg"  # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
+  type                   : Person # Person or Organization (defaults to Person)
+  name                   : "Weile (Waylon) TAN" # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
+    - "https://scholar.google.com/citations?user=lj7cW2oAAAAJ&hl"
+    - "https://github.com/Ust-Waylon"
 
 
 # Analytics

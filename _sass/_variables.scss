@@ -55,24 +55,24 @@ $sidebar-link-max-width     : 250px;
    Colors
    ========================================================================== */
 
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : mix(#fff, $gray, 50%);
-$lighter-gray               : mix(#fff, $gray, 90%);
+$gray                       : #6b7280;
+$dark-gray                  : #1f2937;
+$darker-gray                : #111827;
+$light-gray                 : #d1d5db;
+$lighter-gray               : #f3f4f6;
 
-$body-color                 : #fff;
-$background-color           : #fff;
-$code-background-color      : #fafafa;
+$body-color                 : #fafbfc;
+$background-color           : #fafbfc;
+$code-background-color      : #f3f4f6;
 $code-background-color-dark : $light-gray;
-$text-color                 : $dark-gray;
-$border-color               : $lighter-gray;
+$text-color                 : #374151;
+$border-color               : #e5e7eb;
 
-$primary-color              : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
+$primary-color              : #0f4c81; // academic blue
+$success-color              : #16a34a;
+$warning-color              : #d97706;
+$danger-color               : #dc2626;
+$info-color                 : #0e7490;
 
 /* brands */
 $behance-color              : #1769FF;
