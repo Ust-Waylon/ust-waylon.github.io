@@ -54,12 +54,13 @@
 }
 
 // Sidebar avatar — rectangular so the full portrait shows (no circular crop)
+// !important: theme sets border-radius:50% and cached old CSS was masking updates
 .author__avatar {
   img {
-    max-width: 175px;
+    max-width: 175px !important;
     width: 100%;
-    height: auto;
-    border-radius: 6px; // rectangle with soft corners
+    height: auto !important;
+    border-radius: 6px !important; // rectangle with soft corners (not circle)
     object-fit: contain;
     border: 1px solid $border-color;
     box-shadow: 0 4px 14px rgba(15, 76, 129, 0.12);
