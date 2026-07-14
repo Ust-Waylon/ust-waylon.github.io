@@ -53,38 +53,174 @@
   }
 }
 
-// Sidebar avatar — rectangular so the full portrait shows (no circular crop)
-// !important: theme sets border-radius:50% and cached old CSS was masking updates
+// Masthead: nav + theme toggle in one row (flex — no absolute hacks)
+.masthead__menu {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.greedy-nav {
+  flex: 1 1 auto;
+  min-width: 0; // allow shrinking so toggle stays visible
+}
+
+.theme-toggle {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid $border-color;
+  border-radius: 999px;
+  background: #fff;
+  color: $gray;
+  font-size: 0.9rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 30;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+
+  &:hover,
+  &:focus {
+    color: $primary-color;
+    border-color: $primary-color;
+    outline: none;
+  }
+}
+
+// Smooth theme color shifts (skip for users who prefer reduced motion)
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  .masthead,
+  .greedy-nav,
+  .pub-item,
+  .page__footer,
+  .author__content .author__name,
+  .author__content .author__bio {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+}
+
+// Sidebar avatar — rectangular, no polaroid frame
+// !important: theme sets border-radius:50% / padding:5px
 .author__avatar {
   img {
     max-width: 175px !important;
     width: 100%;
     height: auto !important;
-    border-radius: 6px !important; // rectangle with soft corners (not circle)
-    object-fit: contain;
-    border: 1px solid $border-color;
-    box-shadow: 0 4px 14px rgba(15, 76, 129, 0.12);
+    border-radius: 6px !important;
+    object-fit: cover;
+    border: 1px solid $border-color !important;
+    box-shadow: none;
+    padding: 0 !important;
+    background: transparent;
+    display: block;
   }
 }
 
+// Author block under the photo
 .author__content {
+  @include breakpoint($large) {
+    margin-top: 0.75em;
+  }
+
   .author__name {
     color: $darker-gray;
     font-weight: 650;
+    line-height: 1.3;
+    white-space: normal;
+
+    @include breakpoint($large) {
+      margin-top: 0;
+      margin-bottom: 0.3em;
+    }
   }
 
   .author__bio {
     color: $gray;
     font-size: $type-size-6;
+    line-height: 1.45;
+    margin: 0;
+
+    @include breakpoint($large) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 }
 
+.author__urls-wrapper {
+  @include breakpoint($large) {
+    margin-top: 0.75em;
+    padding-top: 0.75em;
+    border-top: 1px solid $border-color;
+  }
+}
+
+// Uniform list: Hong Kong / HKUST / Email / Scholar / Github
+// IMPORTANT: set size once on <li>; anchors use inherit (no nested em shrink)
 .author__urls {
-  a {
+  background: transparent !important;
+  box-shadow: none !important;
+
+  @include breakpoint($large) {
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  > li {
+    margin: 0 0 0.35em;
+    padding: 0;
+    font-size: 0.875rem !important; // fixed rem — same for every row
+    line-height: 1.5;
     color: $text-color;
+    background: transparent !important;
+    white-space: normal;
+  }
+
+  > li.author__desktop {
+    display: none;
+    color: $text-color;
+    background: transparent !important;
+
+    @include breakpoint($large) {
+      display: list-item !important;
+    }
+
+    i {
+      color: inherit;
+      margin-right: 0.4em;
+    }
+  }
+
+  a {
+    display: inline !important;
+    color: inherit !important;
+    font-size: inherit !important; // same as parent <li>
+    font-weight: inherit;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0;
+    background: transparent !important;
+
+    i, .ai {
+      color: inherit;
+      margin-right: 0.4em;
+    }
 
     &:hover {
-      color: $primary-color;
+      color: $primary-color !important;
+      text-decoration: none !important;
+      background: transparent !important;
+
+      i, .ai {
+        color: $primary-color;
+      }
     }
   }
 }

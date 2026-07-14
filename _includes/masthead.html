@@ -18,6 +18,11 @@
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
+      {%- comment -%} Outside #site-nav so greedy-nav only finds its own hamburger button {%- endcomment -%}
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Dark mode" aria-pressed="false">
+        <span class="theme-toggle__moon" aria-hidden="true"><i class="fas fa-moon"></i></span>
+        <span class="theme-toggle__sun" aria-hidden="true" hidden><i class="fas fa-sun"></i></span>
+      </button>
     </div>
   </div>
 </div>

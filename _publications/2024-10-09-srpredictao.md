@@ -3,14 +3,14 @@ title: "SR-PredictAO: Session-based Recommendation with High-Capability Predicto
 collection: publications
 category: conferences
 permalink: /publication/2024-10-09-srpredictao
-excerpt: "A predictor add-on framework that strengthens next-item prediction in session-based recommendation and consistently improves strong encoder baselines."
+excerpt: "Identifies the overlooked low-capability predictor in encoder–predictor session-based recommenders and introduces a pluggable high-capability predictor add-on that mitigates random user behavior and consistently boosts existing models."
 date: 2024-10-09
 venue: 'ICDM 2024 (Regular Paper)'
 paperurl: 'https://doi.org/10.1109/ICDM59182.2024.00055'
 slidesurl: 'https://ust-waylon.github.io/files/ICDM2024_SR_PredictAO.pdf'
 codeurl: 'https://github.com/rickyskywalker/sr-predictao-official'
 arxivurl: 'https://arxiv.org/abs/2309.12218'
-citation: 'Ruida Wang, Raymond Chi-Wing Wong, and Weile Tan. "SR-PredictAO: Session-based Recommendation with High-Capability Predictor Add-On." ICDM 2024.'
+citation: 'R. Wang, R. C.-W. Wong, and W. Tan, “SR-PredictAO: Session-Based Recommendation with High-Capability Predictor Add-On,” 2024 IEEE International Conference on Data Mining (ICDM), pp. 480–489, Dec. 2024, doi: 10.1109/ICDM59182.2024.00055.'
 ---
 
 **Authors:** [Ruida Wang](https://rickyskywalker.github.io), [Raymond Chi-Wing WONG](https://cse.hkust.edu.hk/~raywong/), **Weile Tan**

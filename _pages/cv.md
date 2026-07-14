@@ -62,4 +62,5 @@ Publications
 Academic Services
 ======
 
-* **Reviewer**: ICDM 2024/2025, KDD 2025, WWW 2025
+* **Reviewer**: ICDM 2024/2025, KDD 2025, WWW 2025, MDM 2026
+* **Student Helper**: PAKDD 2026
