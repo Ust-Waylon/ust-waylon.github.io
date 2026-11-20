@@ -578,16 +578,16 @@ strong {
 
 @media (prefers-reduced-motion: no-preference) {
   .hero__lede strong {
-    animation: hero-mark 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s both;
+    animation: hero-mark 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s backwards;
   }
 
   .hero__line:first-child .hero__word {
-    animation: hero-recall 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+    animation: hero-recall 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) backwards;
     animation-delay: calc(0.6s + var(--i) * 0.05s);
   }
 
   .hero__line:last-child .hero__word {
-    animation: hero-predict 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+    animation: hero-predict 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) backwards;
     animation-delay: calc(1.25s + var(--i) * 0.16s);
   }
 }
@@ -596,12 +596,21 @@ strong {
   from {
     background-size: 0 0.5em;
   }
+
+  to {
+    background-size: 100% 0.5em;
+  }
 }
 
 @keyframes hero-recall {
   from {
     opacity: 0;
     filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
   }
 }
 
@@ -613,9 +622,11 @@ strong {
     transform: translateY(0.4em);
   }
 
-  60% {
+  to {
     opacity: 1;
-    color: var(--muted);
+    color: var(--ink);
+    filter: blur(0);
+    transform: translateY(0);
   }
 }
 
