@@ -7,7 +7,10 @@ redirect_from:
   - /about/
   - /about.html
 role: "PhD student · Computer Science and Engineering · HKUST"
-tagline: "I work on recommender systems: models that learn from what people have done to predict what they will want next."
+tagline: "I study **recommender systems**:"
+motto:
+  - "learning from your past,"
+  - "shaping your future."
 photo: id_photo_600.jpg
 photo_width: 600
 photo_height: 800
