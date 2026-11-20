@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<main class="shell paper">
+  <a class="backlink" href="{{ base_path }}/publications/"><span aria-hidden="true">←</span> All publications</a>
+
+  <header class="page-head">
+    <p class="pub__venue">
+      {% if page.venue_short %}<span class="venue">{{ page.venue_short }}</span>{% endif %}
+      {% if page.venue_note %}<span class="pub__note">{{ page.venue_note }}</span>{% endif %}
+    </p>
+    <h1 class="page-head__title paper__title">{{ page.title }}</h1>
+    {% if page.authors %}<p class="pub__authors paper__authors">{{ page.authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
+    {% include pub-links.html pub=page %}
+  </header>
+
+  {% if page.teaser %}
+    <figure class="paper__fig">
+      <a class="plate" href="{{ base_path }}/images/{{ page.teaser }}" title="Open full size">
+        <img src="{{ base_path }}/images/{{ page.teaser }}" alt="{{ page.teaser_alt }}"{% if page.teaser_width %} width="{{ page.teaser_width }}" height="{{ page.teaser_height }}"{% endif %}>
+      </a>
+      {% if page.teaser_caption %}<figcaption>{{ page.teaser_caption | markdownify | remove: '<p>' | remove: '</p>' | strip }}</figcaption>{% endif %}
+    </figure>
+  {% endif %}
+
+  <section class="row" aria-labelledby="abstract">
+    <h2 class="row__label" id="abstract">Abstract</h2>
+    <div class="row__body prose">
+      {{ content }}
+    </div>
+  </section>
+
+  {% if page.citation %}
+    <section class="row" aria-labelledby="citation">
+      <h2 class="row__label" id="citation">Citation</h2>
+      <div class="row__body">
+        <p class="cite">{{ page.citation }}</p>
+      </div>
+    </section>
+  {% endif %}
+</main>

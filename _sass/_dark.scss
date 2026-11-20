@@ -1,50 +1,15 @@
 /* ==========================================================================
    Dark mode (data-theme="dark" on <html>)
+   Site components read the CSS variables set in _custom.scss; this file
+   only covers elements styled by the underlying theme.
    ========================================================================== */
-
-// Palette — cool academic navy, readable body text
-$dm-bg:            #0f1419;
-$dm-surface:       #1a2332;
-$dm-surface-2:     #243044;
-$dm-text:          #e5e7eb;
-$dm-text-muted:    #9ca3af;
-$dm-heading:       #f3f4f6;
-$dm-border:        #2d3a4d;
-$dm-primary:       #6ba3d6; // lighter academic blue for dark bg
-$dm-primary-hover: #8bb8e0;
-$dm-code-bg:       #1e293b;
-$dm-shadow:        0 4px 18px rgba(0, 0, 0, 0.35);
 
 html[data-theme="dark"] {
   color-scheme: dark;
-  background-color: $dm-bg;
-
-  body {
-    background-color: $dm-bg;
-    color: $dm-text;
-  }
-
-  // ---- Headings & content ----
-  h1, h2, h3, h4, h5, h6 {
-    color: $dm-heading;
-  }
-
-  a {
-    color: $dm-primary;
-
-    &:hover,
-    &:focus {
-      color: $dm-primary-hover;
-    }
-  }
-
-  hr {
-    border-top-color: $dm-border;
-  }
 
   blockquote {
-    border-left-color: $dm-primary;
-    color: $dm-text-muted;
+    border-left-color: var(--signal);
+    color: var(--muted);
   }
 
   p > code,
@@ -52,26 +17,26 @@ html[data-theme="dark"] {
   li > code,
   figcaption > code,
   td > code {
-    background: $dm-code-bg;
-    border-color: $dm-border;
-    color: $dm-text;
+    background: var(--card);
+    border-color: var(--rule);
+    color: var(--text);
     box-shadow: none;
   }
 
   pre {
-    background: $dm-code-bg;
-    border-color: $dm-border;
-    color: $dm-text;
+    background: var(--card);
+    border-color: var(--rule);
+    color: var(--text);
   }
 
   table {
     th, td {
-      border-color: $dm-border;
+      border-color: var(--rule);
     }
 
     th {
-      background: $dm-surface;
-      color: $dm-heading;
+      background: var(--card);
+      color: var(--ink);
     }
 
     tr:nth-child(even) {
@@ -79,297 +44,45 @@ html[data-theme="dark"] {
     }
   }
 
-  // ---- Masthead / nav ----
-  .masthead {
-    background: $dm-surface !important;
-    border-bottom-color: $dm-border;
-  }
-
-  .greedy-nav {
-    background: $dm-surface;
-
-    a {
-      color: $dm-primary;
-
-      &:hover,
-      &:focus {
-        color: $dm-primary-hover;
-      }
-    }
-
-    .visible-links a:before {
-      background: $dm-primary;
-    }
-
-    .hidden-links {
-      background: $dm-surface-2;
-      border-color: $dm-border;
-      box-shadow: $dm-shadow;
-
-      a:hover {
-        background: rgba($dm-primary, 0.15);
-        color: $dm-primary-hover;
-      }
-
-      &:after {
-        border-color: $dm-surface-2 transparent;
-      }
-
-      &:before {
-        border-color: $dm-border transparent;
-      }
-
-      li {
-        border-bottom-color: $dm-border;
-      }
-    }
-  }
-
-  // Theme toggle button
-  .theme-toggle {
-    color: $dm-text-muted;
-    border-color: $dm-border;
-    background: $dm-surface;
-
-    &:hover,
-    &:focus {
-      color: $dm-primary;
-      border-color: $dm-primary;
-      background: rgba($dm-primary, 0.1);
-    }
-  }
-
-  // ---- Sidebar / author ----
-  .author__avatar img {
-    border-color: $dm-border !important;
-    box-shadow: none;
-  }
-
-  .author__content {
-    .author__name {
-      color: $dm-heading;
-    }
-
-    .author__bio {
-      color: $dm-text-muted;
-    }
-  }
-
-  .author__urls-wrapper {
-    @include breakpoint($large) {
-      border-top-color: $dm-border;
-    }
-
-    > .btn--inverse {
-      background: $dm-surface-2;
-      color: $dm-text !important;
-      border-color: $dm-border !important;
-
-      &:hover {
-        color: $dm-heading !important;
-        border-color: $dm-primary !important;
-        background: rgba($dm-primary, 0.12);
-      }
-    }
-  }
-
-  .author__urls {
-    // No card / different panel behind the contact list on desktop
-    background: transparent !important;
-    border: 0 !important;
-    box-shadow: none !important;
-
-    &:after,
-    &:before {
-      border-color: transparent;
-    }
-
-    > li {
-      color: $dm-text;
-      background: transparent !important;
-    }
-
-    > li.author__desktop {
-      color: $dm-text;
-      background: transparent !important;
-
-      i {
-        color: $dm-text;
-      }
-    }
-
-    a {
-      color: $dm-text !important;
-      background: transparent !important;
-
-      i, .ai {
-        color: $dm-text;
-      }
-
-      &:hover {
-        color: $dm-primary !important;
-        background: transparent !important;
-
-        i, .ai {
-          color: $dm-primary;
-        }
-      }
-    }
-  }
-
-  // Mobile "Follow" popup only (absolute dropdown) may keep a solid panel
-  @media screen and (max-width: 924px) {
-    .author__urls {
-      background: $dm-surface-2 !important;
-      border: 1px solid $dm-border !important;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
-    }
-  }
-
-  // ---- Page content overrides from _custom ----
-  .page__content {
-    h1, h2, h3, h4, h5, h6 {
-      color: $dm-heading;
-    }
-
-    h1 {
-      border-bottom-color: rgba($dm-primary, 0.25);
-    }
-
-    a {
-      color: $dm-primary;
-
-      &:hover {
-        color: $dm-primary-hover;
-      }
-    }
-  }
-
   .page__meta,
   .page__date {
-    color: $dm-text-muted;
+    color: var(--muted);
   }
 
-  .page__footer {
-    background-color: $dm-surface;
-    border-top-color: $dm-border;
-    color: $dm-text-muted;
-
-    a {
-      color: $dm-primary;
-    }
-
-    .fas,
-    .fab,
-    .far,
-    .fal {
-      color: $dm-text-muted;
-    }
-  }
-
-  // ---- Publications ----
-  .pub-item {
-    background: $dm-surface;
-    border-color: $dm-border;
-    border-left-color: $dm-primary;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-
-    .pub-title {
-      color: $dm-heading;
-    }
-
-    .pub-meta {
-      color: $dm-text-muted;
-    }
-
-    .pub-authors {
-      color: $dm-text;
-    }
-  }
-
-  .pub-venue {
-    background: rgba($dm-primary, 0.15);
-    color: $dm-primary;
-  }
-
-  .pub-chip {
-    background: $dm-surface-2;
-    border-color: rgba($dm-primary, 0.4);
-    color: $dm-primary !important;
-
-    &:hover,
-    &:focus {
-      background: $dm-primary;
-      color: $dm-bg !important;
-      border-color: $dm-primary;
-    }
-  }
-
-  .pub-citation {
-    color: $dm-text-muted;
-  }
-
-  // ---- Archive ----
-  .archive__item {
-    border-bottom-color: $dm-border;
-  }
-
-  .archive__item-title a {
-    color: $dm-heading;
-
-    &:hover {
-      color: $dm-primary;
-    }
-  }
-
-  .archive__item-excerpt {
-    color: $dm-text;
-  }
-
-  // ---- Buttons ----
-  .btn--primary {
-    background-color: $dm-primary;
-    color: $dm-bg !important;
-
-    &:hover {
-      background-color: $dm-primary-hover;
-    }
-  }
-
-  // ---- TOC / pagination / notices ----
   .toc {
-    background-color: $dm-surface;
-    border-color: $dm-border;
-    color: $dm-text-muted;
+    background-color: var(--card);
+    border-color: var(--rule);
+    color: var(--muted);
     box-shadow: none;
 
     .nav__title {
-      background: darken($dm-primary, 25%);
+      background: var(--rule-strong);
+      color: var(--ink);
     }
   }
 
   .toc__menu a {
-    color: $dm-text-muted;
-    border-bottom-color: $dm-border;
+    color: var(--muted);
+    border-bottom-color: var(--rule);
 
     &:hover {
-      color: $dm-heading;
-      background: $dm-surface-2;
+      color: var(--ink);
+      background: var(--tint);
     }
   }
 
   .pagination a {
-    color: $dm-text-muted;
-    border-color: $dm-border;
+    color: var(--muted);
+    border-color: var(--rule);
 
     &:hover {
-      color: $dm-primary;
+      color: var(--link);
     }
 
     &.current {
-      background: $dm-primary;
-      color: $dm-bg;
-      border-color: $dm-primary;
+      background: var(--link);
+      color: var(--paper);
+      border-color: var(--link);
     }
   }
 
@@ -379,23 +92,16 @@ html[data-theme="dark"] {
   .notice--warning,
   .notice--success,
   .notice--danger {
-    background: $dm-surface-2;
-    border-color: $dm-border;
-    color: $dm-text;
+    background: var(--card);
+    border-color: var(--rule);
+    color: var(--text);
   }
 
-  // forms
   input,
   textarea,
   select {
-    background: $dm-surface;
-    border-color: $dm-border;
-    color: $dm-text;
-  }
-
-  // selection
-  ::selection {
-    background: rgba($dm-primary, 0.35);
-    color: $dm-heading;
+    background: var(--card);
+    border-color: var(--rule);
+    color: var(--text);
   }
 }

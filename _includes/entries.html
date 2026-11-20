@@ -1,0 +1,17 @@
+<ul class="entries">
+  {% for e in include.items %}
+    {% if include.home and e.home_notes %}{% assign notes = e.home_notes %}{% else %}{% assign notes = e.notes %}{% endif %}
+    <li>
+      <div class="entry__head">
+        <h3 class="entry__title">{{ e.title }}</h3>
+        {% if e.date %}<span class="entry__date">{{ e.date }}</span>{% endif %}
+      </div>
+      {% if e.org %}<p class="entry__org">{{ e.org | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% if e.place %} <span class="entry__place">· {{ e.place }}</span>{% endif %}</p>{% endif %}
+      {% if notes %}
+        <ul class="entry__notes">
+          {% for n in notes %}<li>{{ n | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

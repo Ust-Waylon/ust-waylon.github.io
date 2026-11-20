@@ -1,0 +1,53 @@
+# Shared by the CV page and the home page. `org` and `notes` are Markdown.
+# `home_notes` (optional) replaces `notes` on the home page.
+education:
+  - title: PhD in Computer Science and Engineering
+    org: Hong Kong University of Science and Technology (HKUST)
+    date: 2024 – Present
+    notes:
+      - HKUST RedBird PhD Award
+  - title: BSc in Data Science and Technology
+    org: Hong Kong University of Science and Technology (HKUST)
+    date: 2020 – 2024
+    notes:
+      - "First Class Honors, Major CGA: 3.84/4.3"
+      - "[S.S. Chern Class](https://www.math.hkust.edu.hk/ug/chern_class/) Member"
+    home_notes:
+      - First Class Honors
+      - "[S.S. Chern Class](https://www.math.hkust.edu.hk/ug/chern_class/) Member"
+  - title: Exchange Student
+    org: University of California, Santa Barbara (UCSB)
+    date: "2023"
+
+research:
+  - title: Undergraduate Research Opportunities Program
+    org: Hong Kong University of Science and Technology (HKUST)
+    date: Aug 2022 – Sep 2024
+    notes:
+      - "Project: Knowledge Discovery over Database"
+      - "Supervised by [Prof. Raymond Chi-Wing WONG](https://cse.hkust.edu.hk/~raywong/)"
+  - title: CSE/CPEG Final Year Project
+    org: Hong Kong University of Science and Technology (HKUST)
+    date: Apr 2023 – Aug 2024
+    notes:
+      - "Project: Human-AI Collaboration in Data Science"
+      - "Supervised by [Prof. Xiaojuan MA](https://www.cse.ust.hk/~mxj/)"
+      - "Project GitHub: [Dream Maker](https://github.com/Ust-Waylon/Dream_Maker)"
+
+work:
+  - title: AI Engineer Intern
+    org: "[SOCIF Limited](https://www.socif.co), Hong Kong Science Park"
+    place: Hong Kong SAR
+    date: June 2023 – August 2023
+  - title: AI Engineer Intern (Image Processing)
+    org: "[DRESIO Limited](https://www.dresio.io), Hong Kong Science Park"
+    place: Hong Kong SAR
+    date: June 2022 – August 2022
+
+service:
+  - title: Program Committee (PC) Member
+    org: WSDM 2027
+  - title: Reviewer
+    org: ICDM 2024/2025, KDD 2025, WWW 2025, MDM 2026, ICDE 2027, WSDM 2027
+  - title: Student Helper
+    org: PAKDD 2026

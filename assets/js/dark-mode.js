@@ -39,7 +39,7 @@
 
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) {
-      meta.setAttribute("content", theme === "dark" ? "#0f1419" : "#ffffff");
+      meta.setAttribute("content", theme === "dark" ? "#0e141b" : "#f5f7fa");
     }
 
     updateToggle(theme);

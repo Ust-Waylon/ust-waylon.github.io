@@ -1,0 +1,7 @@
+{% assign links_pub = include.pub %}
+<ul class="chips">
+  {% if links_pub.arxivurl %}<li><a class="chip" href="{{ links_pub.arxivurl }}">arXiv</a></li>{% endif %}
+  {% if links_pub.paperurl %}<li><a class="chip" href="{{ links_pub.paperurl }}">Paper</a></li>{% endif %}
+  {% if links_pub.codeurl %}<li><a class="chip" href="{{ links_pub.codeurl }}">Code</a></li>{% endif %}
+  {% if links_pub.slidesurl %}<li><a class="chip" href="{{ links_pub.slidesurl }}">Slides</a></li>{% endif %}
+</ul>

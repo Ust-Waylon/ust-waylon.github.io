@@ -1,0 +1,20 @@
+{% include base_path %}
+{% assign p = include.pub %}
+{% if p.teaser and include.compact != true %}{% assign show_fig = true %}{% else %}{% assign show_fig = false %}{% endif %}
+<article class="pub{% unless show_fig %} pub--plain{% endunless %}">
+  {% if show_fig %}
+    <a class="pub__fig" href="{{ base_path }}{{ p.url }}" tabindex="-1" aria-hidden="true">
+      <img src="{{ base_path }}/images/{{ p.teaser }}" alt="" loading="lazy"{% if p.teaser_width %} width="{{ p.teaser_width }}" height="{{ p.teaser_height }}"{% endif %}>
+    </a>
+  {% endif %}
+  <div class="pub__body">
+    <p class="pub__venue">
+      {% if p.venue_short %}<span class="venue">{{ p.venue_short }}</span>{% endif %}
+      {% if p.venue_note %}<span class="pub__note">{{ p.venue_note }}</span>{% endif %}
+    </p>
+    <h3 class="pub__title"><a href="{{ base_path }}{{ p.url }}">{{ p.title }}</a></h3>
+    {% if p.authors %}<p class="pub__authors">{{ p.authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
+    {% if include.tldr and p.excerpt %}<p class="pub__tldr">{{ p.excerpt | strip_html }}</p>{% endif %}
+    {% include pub-links.html pub=p %}
+  </div>
+</article>

@@ -1,0 +1,39 @@
+---
+layout: plain
+title: "CV"
+permalink: /cv/
+redirect_from:
+  - /resume
+lede: "The PDF version was last updated on 2025-03-30."
+pdf: /files/cv_03_30.pdf
+---
+
+{% assign cv = site.data.cv %}
+
+<section class="row" aria-labelledby="education">
+  <h2 class="row__label" id="education">Education</h2>
+  <div class="row__body">{% include entries.html items=cv.education %}</div>
+</section>
+
+<section class="row" aria-labelledby="research">
+  <h2 class="row__label" id="research">Research experience</h2>
+  <div class="row__body">{% include entries.html items=cv.research %}</div>
+</section>
+
+<section class="row" aria-labelledby="work">
+  <h2 class="row__label" id="work">Work experience</h2>
+  <div class="row__body">{% include entries.html items=cv.work %}</div>
+</section>
+
+{% assign pubs = site.publications | sort: "date" | reverse %}
+<section class="row" aria-labelledby="publications">
+  <h2 class="row__label" id="publications">Publications</h2>
+  <div class="row__body pubs">
+    {% for pub in pubs %}{% include pub-card.html pub=pub compact=true %}{% endfor %}
+  </div>
+</section>
+
+<section class="row" aria-labelledby="service">
+  <h2 class="row__label" id="service">Academic service</h2>
+  <div class="row__body">{% include entries.html items=cv.service %}</div>
+</section>

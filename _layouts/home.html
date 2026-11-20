@@ -1,0 +1,109 @@
+---
+layout: default
+---
+
+{% include base_path %}
+{% assign author = site.author %}
+
+<main class="shell">
+  <section class="hero" aria-label="Introduction">
+    <div class="hero__id">
+      <h1 class="hero__name">{{ author.name }}</h1>
+      {% if page.role %}<p class="hero__role">{{ page.role }}</p>{% endif %}
+    </div>
+    <div class="hero__intro">
+      {% if page.tagline %}<p class="hero__tagline">{{ page.tagline }}</p>{% endif %}
+      <ul class="hero__links">
+        {% if author.email %}<li><a href="mailto:{{ author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i>{{ author.email }}</a></li>{% endif %}
+        {% if author.googlescholar %}<li><a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar" aria-hidden="true"></i>Google Scholar</a></li>{% endif %}
+        {% if author.github %}<li><a href="https://github.com/{{ author.github }}"><i class="fab fa-github" aria-hidden="true"></i>GitHub</a></li>{% endif %}
+      </ul>
+    </div>
+    {% if page.photo %}
+      <figure class="hero__photo">
+        <img src="{{ base_path }}/images/{{ page.photo }}" alt="Photo of {{ author.name }}"{% if page.photo_width %} width="{{ page.photo_width }}" height="{{ page.photo_height }}"{% endif %}>
+      </figure>
+    {% endif %}
+  </section>
+
+  <section class="row" aria-labelledby="about">
+    <h2 class="row__label" id="about">About</h2>
+    <div class="row__body prose">
+      {{ content }}
+    </div>
+  </section>
+
+  {% if site.data.news %}
+    <section class="row" aria-labelledby="news">
+      <h2 class="row__label" id="news">News</h2>
+      <div class="row__body">
+        <ul class="news">
+          {% for item in site.data.news %}
+            <li>
+              <time datetime="{{ item.date | replace: '.', '-' }}">{{ item.date }}</time>
+              <p>{{ item.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if page.interests %}
+    <section class="row" aria-labelledby="interests">
+      <h2 class="row__label" id="interests">Research interests</h2>
+      <div class="row__body prose">
+        <ul>
+          {% for item in page.interests %}<li>{{ item | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}
+        </ul>
+      </div>
+    </section>
+  {% endif %}
+
+  {% assign selected = site.publications | where: "selected", true | sort: "date" | reverse %}
+  {% if selected.size > 0 %}
+    <section class="row" aria-labelledby="selected">
+      <h2 class="row__label" id="selected">Selected publications</h2>
+      <div class="row__body">
+        <div class="pubs">
+          {% for pub in selected %}{% include pub-card.html pub=pub %}{% endfor %}
+        </div>
+        <p class="row__more"><a href="{{ base_path }}/publications/">All publications <span aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if site.data.cv.education %}
+    <section class="row" aria-labelledby="education">
+      <h2 class="row__label" id="education">Education</h2>
+      <div class="row__body">{% include entries.html items=site.data.cv.education home=true %}</div>
+    </section>
+  {% endif %}
+
+  {% if site.data.cv.service %}
+    <section class="row" aria-labelledby="service">
+      <h2 class="row__label" id="service">Academic service</h2>
+      <div class="row__body">{% include entries.html items=site.data.cv.service %}</div>
+    </section>
+  {% endif %}
+
+  {% if page.personal %}
+    <section class="row" aria-labelledby="personal">
+      <h2 class="row__label" id="personal">Personal interests</h2>
+      <div class="row__body prose">
+        <ul>
+          {% for item in page.personal %}<li>{{ item | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}
+        </ul>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if page.visitor_map %}
+    <section class="row" aria-labelledby="visitors">
+      <h2 class="row__label" id="visitors">Visitors</h2>
+      <div class="row__body">
+        <div class="visitors plate" data-visitor-map="{{ page.visitor_map.id }}" data-light="{{ page.visitor_map.light }}" data-dark="{{ page.visitor_map.dark }}"></div>
+      </div>
+    </section>
+  {% endif %}
+</main>
