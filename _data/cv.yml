@@ -45,9 +45,9 @@ work:
     date: June 2022 – August 2022
 
 service:
-  - title: Program Committee (PC) Member
-    org: WSDM 2027
   - title: Reviewer
     org: ICDM 2024/2025, KDD 2025, WWW 2025, MDM 2026, ICDE 2027, WSDM 2027
+  - title: Program Committee (PC) Member
+    org: WSDM 2027
   - title: Student Helper
     org: PAKDD 2026
